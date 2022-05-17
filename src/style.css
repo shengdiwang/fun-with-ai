@@ -1,0 +1,11 @@
+.main {
+  width: 500px;
+}
+
+.submitText {
+  text-align: right;
+}
+
+#response-block {
+  background-color: gray;
+}
