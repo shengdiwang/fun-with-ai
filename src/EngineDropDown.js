@@ -5,7 +5,7 @@ function EngineDropDown(props) {
 
   return (
     <label>
-      Choose an OpenAI engine:&nbsp;
+      Choose an OpenAI engine (or use the default!)&nbsp;
       <select value={props.engine} onChange={handleChange}>
         <option value="text-davinci-002">Davinci</option>
         <option value="text-curie-001">Curie</option>

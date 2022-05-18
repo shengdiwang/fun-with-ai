@@ -1,6 +1,16 @@
+require("dotenv").config();
+
 async function getResponse(prompt, engine) {
   if (!prompt || typeof prompt !== "string") {
     throw TypeError("Requires non-empty strings.");
+  } else if (
+    !engine ||
+    (engine !== "text-davinci-002" &&
+      engine !== "text-curie-001" &&
+      engine !== "text-babbage-001" &&
+      engine !== "text-ada-001")
+  ) {
+    throw RangeError("Requires a valid engine type.");
   }
 
   const data = {
@@ -12,14 +22,13 @@ async function getResponse(prompt, engine) {
     presence_penalty: 0.0,
   };
 
-  // TODO: Replace with environment variable after deployment.
-  const SECRETE_KEY = "";
+  const KEY = process.env.API_KEY;
 
   return fetch(`https://api.openai.com/v1/engines/${engine}/completions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${SECRETE_KEY}`,
+      Authorization: `Bearer ${KEY}`,
     },
     body: JSON.stringify(data),
   })

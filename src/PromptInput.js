@@ -3,7 +3,9 @@ import { getResponse } from "./Utils";
 import EngineDropDown from "./EngineDropDown";
 
 function PromptInput(props) {
-  const [prompt, setPrompt] = useState("");
+  const [prompt, setPrompt] = useState(
+    "Give a short instruction and let your AI run with it (try removing this first line and submit)\nWrite a tagline for an ice cream shop."
+  );
   const [engine, setEngine] = useState("text-curie-001");
   const [alertStatus, setAlertStatus] = useState(false);
 
