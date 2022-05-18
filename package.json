@@ -2,10 +2,15 @@
   "name": "shopify-fun-with-ai",
   "version": "1.0.0",
   "description": "",
+  "source": "public/index.html",
   "main": "index.js",
+  "targets": {
+    "main": false
+  },
   "scripts": {
     "dev": "parcel public/index.html",
-    "test": "jest"
+    "test": "jest",
+    "build": "parcel build"
   },
   "keywords": [],
   "author": "",
