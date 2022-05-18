@@ -11,6 +11,12 @@ function Response(props) {
           </tr>
           <tr>
             <td>
+              <b>Engine:</b>
+            </td>
+            <td>{props.engine}</td>
+          </tr>
+          <tr>
+            <td>
               <b>Response:</b>
             </td>
             <td>{props.response}</td>

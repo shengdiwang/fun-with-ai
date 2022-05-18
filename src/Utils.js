@@ -1,4 +1,4 @@
-async function getResponse(prompt) {
+async function getResponse(prompt, engine) {
   if (!prompt || typeof prompt !== "string") {
     throw TypeError("Requires non-empty strings.");
   }
@@ -15,7 +15,7 @@ async function getResponse(prompt) {
   // TODO: Replace with environment variable after deployment.
   const SECRETE_KEY = "";
 
-  return fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
+  return fetch(`https://api.openai.com/v1/engines/${engine}/completions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

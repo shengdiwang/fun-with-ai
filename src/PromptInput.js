@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { getResponse } from "./Utils";
+import EngineDropDown from "./EngineDropDown";
 
 function PromptInput(props) {
   const [prompt, setPrompt] = useState("");
+  const [engine, setEngine] = useState("text-curie-001");
   const [alertStatus, setAlertStatus] = useState(false);
 
   function handleChange(e) {
@@ -19,10 +21,10 @@ function PromptInput(props) {
       return;
     }
 
-    const response = await getResponse(prompt);
-    const list = props.responsePairList;
-    list.push([prompt, response]);
-    props.responsePairList = props.setResponsePairList([...list]);
+    const response = await getResponse(prompt, engine);
+    const list = props.responseList;
+    list.push([prompt, engine, response]);
+    props.responseList = props.setResponseList([...list]);
 
     setPrompt("");
     return;
@@ -41,6 +43,8 @@ function PromptInput(props) {
             onChange={handleChange}
           ></textarea>
         </label>
+        <br />
+        <EngineDropDown engine={engine} setEngine={setEngine} />
         <br />
         <div className="flex-box">
           {alertStatus ? (

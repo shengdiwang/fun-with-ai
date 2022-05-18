@@ -4,18 +4,18 @@ import PromptInput from "./PromptInput";
 import ResponseDisplay from "./ResponseDisplay";
 
 const FunWithAIApp = () => {
-  const [responsePairList, setResponsePairList] = useState([]);
+  const [responseList, setResponseList] = useState([]);
 
   return (
-    <div id="app" className="mx-auto">
+    <div id="app" className="mx-auto mt-3">
       <h3>
         <b id="text-title">Fun with AI!</b>
       </h3>
       <PromptInput
-        responsePairList={responsePairList}
-        setResponsePairList={setResponsePairList}
+        responseList={responseList}
+        setResponseList={setResponseList}
       />
-      <ResponseDisplay responsePairList={responsePairList} />
+      <ResponseDisplay responseList={responseList} />
     </div>
   );
 };
