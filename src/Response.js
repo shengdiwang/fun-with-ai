@@ -1,6 +1,6 @@
 function Response(props) {
   return (
-    <div className="response-div p-2">
+    <div className="response-div p-2 mt-2">
       <table className="response-table">
         <tbody>
           <tr>

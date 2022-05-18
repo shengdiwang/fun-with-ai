@@ -1,7 +1,7 @@
 import Response from "./Response";
 
-function ResponseDisplay() {
-  const data = [["12345", "54321"]];
+function ResponseDisplay(props) {
+  const data = props.responsePairList.reverse();
   // Using indexes as keys since order of responses is newest to oldest.
   const responses = data.map((d, index) => (
     <Response key={index} input={d[0]} response={d[1]} />

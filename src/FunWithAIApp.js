@@ -1,22 +1,21 @@
+import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import PromptInput from "./PromptInput";
 import ResponseDisplay from "./ResponseDisplay";
 
 const FunWithAIApp = () => {
-  // function submitText(e) {
-  //   e.preventDefault();
-
-  //   inputText = document.getElementById("inputText").value;
-
-  // }
+  const [responsePairList, setResponsePairList] = useState([]);
 
   return (
     <div id="app" className="mx-auto">
       <h3>
         <b id="text-title">Fun with AI!</b>
       </h3>
-      <PromptInput />
-      <ResponseDisplay />
+      <PromptInput
+        responsePairList={responsePairList}
+        setResponsePairList={setResponsePairList}
+      />
+      <ResponseDisplay responsePairList={responsePairList} />
     </div>
   );
 };
