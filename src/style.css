@@ -1,11 +1,37 @@
-.main {
+.promptInput {
+  width: 500px;
+  display: block;
+}
+
+.responses {
+  width: 500px;
+  display: block;
+}
+
+#app {
   width: 500px;
 }
 
-.submitText {
-  text-align: right;
+.flex-box {
+  display: flex;
+  justify-content: flex-end;
 }
 
-#response-block {
-  background-color: gray;
+.response-div {
+  background-color: lightgray;
+  width: 500px;
+}
+
+.response-table {
+  width: 100%;
+}
+
+.response-table-first-col {
+  width: 25%;
+}
+
+textarea {
+  height: 200px;
+  width: 500px;
+  display: block;
 }
